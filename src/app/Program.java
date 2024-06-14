@@ -2,8 +2,8 @@ package app;
 import java.util.Locale;
 import java.util.Scanner;
 
-import services.PensionService;
-import services.TaxService;
+import entities.Employee;
+import services.SalaryService;
 
 
 public class Program {
@@ -14,20 +14,20 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		TaxService taxService = new TaxService();
-		PensionService pensionService = new PensionService();
 		
-		System.out.println(taxService.tax(4000.00));
-		System.out.println(pensionService.discount(4000.00));
-		/*
 		System.out.println("Nome: ");
 		String name = sc.nextLine();
 		System.out.println("Salário bruto: ");
 		double grossSalary = sc.nextDouble();
 		
-		double netSalary = grossSalary * 0.7;
+		Employee employee = new Employee(name, grossSalary);
+		
+		SalaryService salaryService = new SalaryService();
+		
+		double netSalary = salaryService.netSalary(employee);
+				
 		System.out.printf("Salário líquido = %.2f%n", netSalary);
-		*/
+		
 		sc.close();
 	}
 
