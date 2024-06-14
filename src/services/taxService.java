@@ -1,9 +1,10 @@
 package services;
 
-public class taxService {
-	
+public class TaxService {
+			
 	// Funções
 	public double tax(double amount) {
-		return amount * 0.2;
+	return amount * 0.2;
 	}
+
 }
